@@ -1,0 +1,3 @@
+[submodule "setuptools_scm"]
+	path = setuptools_scm
+	url = https://github.com/pypa/setuptools_scm/
