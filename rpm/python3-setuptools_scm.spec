@@ -30,7 +30,6 @@ BuildRequires:  python3-setuptools
 BuildRequires:  fdupes
 BuildRequires:  python3-rpm-macros
 Requires:       python3-setuptools
-BuildArch:      noarch
 Recommends:     git-core
 
 %description
