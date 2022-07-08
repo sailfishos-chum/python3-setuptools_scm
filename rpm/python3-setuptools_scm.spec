@@ -29,8 +29,8 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  fdupes
 BuildRequires:  python3-rpm-macros
+BuildRequires:  git-core
 Requires:       python3-setuptools
-Recommends:     git-core
 
 %description
 The setuptools_scm package handles managing one's Python package versions
