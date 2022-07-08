@@ -24,7 +24,7 @@ Summary:        Python setuptools handler for SCM tags
 License:        MIT
 Group:          Development/Languages/Python
 URL:            https://github.com/pypa/setuptools_scm
-Source0:        %{name}-%{version}.tar.gz
+Source0:        setuptools_scm-%{version}.tar.gz
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  fdupes
@@ -37,7 +37,7 @@ The setuptools_scm package handles managing one's Python package versions
 in SCM metadata. It also handles file finders for the supperted SCMs.
 
 %prep
-%setup -q -n %{name}-%{version}/setuptools_scm
+%setup -q -n setuptools_scm-%{version}/setuptools_scm
 
 %build
 %py3_build
