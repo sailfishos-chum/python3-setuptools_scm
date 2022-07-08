@@ -25,23 +25,13 @@ License:        MIT
 Group:          Development/Languages/Python
 URL:            https://github.com/pypa/setuptools_scm
 Source0:        %{name}-%{version}.tar.gz
-#Source:         https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-%{version}.tar.gz
-# Patch0:         add-rpmfail-pytest-markers.patch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  fdupes
 BuildRequires:  python3-rpm-macros
 Requires:       python3-setuptools
-#BuildArch:      noarch
-%if %{with test}
-# Testing requirements
-BuildRequires:  %{python_module pip}
-BuildRequires:  %{python_module pytest < 4.0}
-BuildRequires:  %{python_module setuptools_scm = %{version}}
-BuildRequires:  git-core
-%endif
+BuildArch:      noarch
 Recommends:     git-core
-# %python_subpackages
 
 %description
 The setuptools_scm package handles managing one's Python package versions
@@ -49,27 +39,16 @@ in SCM metadata. It also handles file finders for the supperted SCMs.
 
 %prep
 %setup -q -n %{name}-%{version}/setuptools_scm
-# %autopatch -p1
 
 %build
 %py3_build
 
 %install
-#%if !%{with test}
 %py3_install
-# %python_expand %fdupes %{buildroot}%{$python_sitelib}
-#%endif
 
-%if %{with test}
-%check
-# %python_expand PYTHONPATH=%{$python_sitelib} py.test-%{$python_bin_suffix} -v -k 'not (rpmfail_github_connect or test_mercurial or hg)'
-%endif
-
-%if !%{with test}
 %files
 %license LICENSE
 %doc README.rst CHANGELOG.rst
 %{python_sitelib}/*
-%endif
 
 %changelog
